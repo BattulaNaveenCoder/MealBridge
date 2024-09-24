@@ -16,8 +16,11 @@ namespace MealBridgeModels.Data
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Donation> Donations { get; set; }
+        public DbSet<Recipient> Recipients { get; set; }
+        public DbSet<Token> Tokens { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
 
-       
+
 
 
     }

@@ -36,10 +36,9 @@ namespace MealBridgeModels.Models
         public DateTime createdAt { get;set;}=DateTime.UtcNow;
         public DateTime updatedAt { get; set; }=DateTime.UtcNow;
 
-
-        
-        
-       
+        public ICollection<Donation> Donations { get; set; }
+        public ICollection<Recipient> Recipients { get; set; }
+      
 
     }
     public enum UserType

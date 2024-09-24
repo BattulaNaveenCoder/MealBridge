@@ -45,9 +45,13 @@ namespace MealBridgeModels.Models
 
 
         //Navigation Properties
-        [ForeignKey("DonorId")]
+        [ForeignKey("FkDonorId")]
         public User Donor { get; set; }
-        public int? DonorId { get; set; }
+        public int? FkDonorId { get; set; }
+
+        public ICollection<Recipient> Recipients { get; set; }
+        public ICollection<Token> Tokens { get; set; }
+        public ICollection<Feedback> Feedbacks { get; set; }
        
     }
     public enum DonationType

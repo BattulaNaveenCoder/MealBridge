@@ -4,6 +4,7 @@ using MealBridgeModels.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MealBridgeModels.Migrations
 {
     [DbContext(typeof(FoodDonationContext))]
-    partial class FoodDonationContextModelSnapshot : ModelSnapshot
+    [Migration("20240924103600_added_reciptent")]
+    partial class added_reciptent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,42 +77,6 @@ namespace MealBridgeModels.Migrations
                     b.ToTable("Donations");
                 });
 
-            modelBuilder.Entity("MealBridgeModels.Models.Feedback", b =>
-                {
-                    b.Property<int>("FeedbackId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FeedbackId"));
-
-                    b.Property<string>("Comment")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("FkDonationId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FkDonorId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FkRecipientId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.HasKey("FeedbackId");
-
-                    b.HasIndex("FkDonorId");
-
-                    b.HasIndex("FkRecipientId");
-
-                    b.ToTable("Feedbacks");
-                });
-
             modelBuilder.Entity("MealBridgeModels.Models.Recipient", b =>
                 {
                     b.Property<int>("RecipientId")
@@ -133,44 +100,7 @@ namespace MealBridgeModels.Migrations
 
                     b.HasIndex("FkUserId");
 
-                    b.ToTable("Recipients");
-                });
-
-            modelBuilder.Entity("MealBridgeModels.Models.Token", b =>
-                {
-                    b.Property<int>("TokenId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TokenId"));
-
-                    b.Property<DateTime?>("ClaimedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("FkDonationId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FkRecipientId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("IssuedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TokenCode")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("TokenId");
-
-                    b.HasIndex("FkDonationId");
-
-                    b.HasIndex("FkRecipientId");
-
-                    b.ToTable("Tokens");
+                    b.ToTable("Recipient");
                 });
 
             modelBuilder.Entity("MealBridgeModels.Models.User", b =>
@@ -228,27 +158,6 @@ namespace MealBridgeModels.Migrations
                     b.Navigation("Donor");
                 });
 
-            modelBuilder.Entity("MealBridgeModels.Models.Feedback", b =>
-                {
-                    b.HasOne("MealBridgeModels.Models.User", "Donor")
-                        .WithMany()
-                        .HasForeignKey("FkDonorId");
-
-                    b.HasOne("MealBridgeModels.Models.Donation", "Donation")
-                        .WithMany("Feedbacks")
-                        .HasForeignKey("FkRecipientId");
-
-                    b.HasOne("MealBridgeModels.Models.User", "Recipient")
-                        .WithMany()
-                        .HasForeignKey("FkRecipientId");
-
-                    b.Navigation("Donation");
-
-                    b.Navigation("Donor");
-
-                    b.Navigation("Recipient");
-                });
-
             modelBuilder.Entity("MealBridgeModels.Models.Recipient", b =>
                 {
                     b.HasOne("MealBridgeModels.Models.Donation", "Donation")
@@ -264,33 +173,9 @@ namespace MealBridgeModels.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MealBridgeModels.Models.Token", b =>
-                {
-                    b.HasOne("MealBridgeModels.Models.Donation", "Donation")
-                        .WithMany("Tokens")
-                        .HasForeignKey("FkDonationId");
-
-                    b.HasOne("MealBridgeModels.Models.Recipient", "Recipient")
-                        .WithMany("Tokens")
-                        .HasForeignKey("FkRecipientId");
-
-                    b.Navigation("Donation");
-
-                    b.Navigation("Recipient");
-                });
-
             modelBuilder.Entity("MealBridgeModels.Models.Donation", b =>
                 {
-                    b.Navigation("Feedbacks");
-
                     b.Navigation("Recipients");
-
-                    b.Navigation("Tokens");
-                });
-
-            modelBuilder.Entity("MealBridgeModels.Models.Recipient", b =>
-                {
-                    b.Navigation("Tokens");
                 });
 
             modelBuilder.Entity("MealBridgeModels.Models.User", b =>
