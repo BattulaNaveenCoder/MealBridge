@@ -1,0 +1,6 @@
+@MealBridgeAPI_HostAddress = http://localhost:5270
+
+GET {{MealBridgeAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

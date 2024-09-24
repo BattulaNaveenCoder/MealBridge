@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MealBridge", "MealBridge\MealBridge.csproj", "{24736B0E-B287-4B05-B235-A65818863110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MealBridgeAPI", "MealBridgeAPI\MealBridgeAPI.csproj", "{69D679EF-BB3D-49C7-ADDB-1304C7597462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MealBridgeModels", "MealBridgeModels\MealBridgeModels.csproj", "{5F1B90D5-7FAD-4C10-A3E4-4DAD9588809D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MealBridgeRepository", "MealBridgeRepository\MealBridgeRepository.csproj", "{6876A1C9-A43C-407D-9C1F-DCF7943DEE49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24736B0E-B287-4B05-B235-A65818863110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24736B0E-B287-4B05-B235-A65818863110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24736B0E-B287-4B05-B235-A65818863110}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{24736B0E-B287-4B05-B235-A65818863110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24736B0E-B287-4B05-B235-A65818863110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24736B0E-B287-4B05-B235-A65818863110}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{69D679EF-BB3D-49C7-ADDB-1304C7597462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D679EF-BB3D-49C7-ADDB-1304C7597462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D679EF-BB3D-49C7-ADDB-1304C7597462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D679EF-BB3D-49C7-ADDB-1304C7597462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1B90D5-7FAD-4C10-A3E4-4DAD9588809D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1B90D5-7FAD-4C10-A3E4-4DAD9588809D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1B90D5-7FAD-4C10-A3E4-4DAD9588809D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1B90D5-7FAD-4C10-A3E4-4DAD9588809D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6876A1C9-A43C-407D-9C1F-DCF7943DEE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6876A1C9-A43C-407D-9C1F-DCF7943DEE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6876A1C9-A43C-407D-9C1F-DCF7943DEE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6876A1C9-A43C-407D-9C1F-DCF7943DEE49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B5C7A6D-C51B-4757-83EF-B506F5410B5A}
+	EndGlobalSection
+EndGlobal
